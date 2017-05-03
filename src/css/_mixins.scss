@@ -1,0 +1,5 @@
+@mixin button($basecolor) {
+  background-color: $basecolor;
+  border-top: solid 1px lighten($basecolor, 8%);
+  border-bottom: solid 1px darken($basecolor, 35%);
+}

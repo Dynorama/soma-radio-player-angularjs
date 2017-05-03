@@ -1,0 +1,15 @@
+soma-player {
+  display: block;
+  margin: auto;
+
+  [ng-transclude] {
+      width: 100%;
+  }
+}
+
+#player-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}

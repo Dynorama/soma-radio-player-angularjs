@@ -1,0 +1,13 @@
+newrelic_agent.log
+newrelic.config.js
+.tags*
+.sass-cache/
+vagrant/.vagrant/
+node_modules/
+build/player/
+build/js/externals
+.DS_Store
+coverage/
+build/blim-player/js/blim-player.js.map
+server/config.js
+docs/

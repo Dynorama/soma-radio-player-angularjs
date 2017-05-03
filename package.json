@@ -1,0 +1,37 @@
+{
+  "name": "soma-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fonts": "cp -r node_modules/font-awesome/fonts build/",
+    "sass": "./node_modules/.bin/node-sass ./src/ -o ./build/",
+    "browserify": "browserify -t babelify -t browserify-ngannotate -e ./src/js/app.js  -o build/js/global.js",
+    "watchify": "watchify -t babelify -t browserify-ngannotate -e ./src/js/app.js  -o build/js/global.js",
+    "dev": "npm run sass && npm run browserify && concurrently \"npm run sass -- -w\" \"npm run watchify\" \"npm run serve\"",
+    "serve": "lite-server -c bs-config.js"
+  },
+  "author": "Marcos Hernandez <marcoslhc@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-mocks": "^1.6.4",
+    "babel": "^6.23.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.3.0",
+    "browserify-ngannotate": "^2.0.0",
+    "chai": "^3.5.0",
+    "concurrently": "^3.4.0",
+    "font-awesome": "^4.7.0",
+    "immutable": "^3.8.1",
+    "karma": "^1.6.0",
+    "karma-browserify": "^5.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "lite-server": "^2.3.0",
+    "mocha": "^3.3.0",
+    "node-sass": "^4.5.2",
+    "sinon": "^2.2.0",
+    "watchify": "^3.9.0"
+  }
+}

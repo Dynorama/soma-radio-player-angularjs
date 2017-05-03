@@ -1,0 +1,20 @@
+station {
+  &>div.wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  img {
+    width: 3em;
+    height: 3em;
+    margin-right: 0.5em;
+    box-shadow: 1px 0px 5px -1px #000;
+  }
+
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-weigth: bold;
+}

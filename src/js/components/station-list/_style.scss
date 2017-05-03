@@ -1,0 +1,18 @@
+station-list {
+  ul {
+    padding: 0;
+
+    div {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    li {
+      @include button($text);
+      display: block;
+      background: $text;
+      padding: 0.5em;
+    }
+  }
+}
