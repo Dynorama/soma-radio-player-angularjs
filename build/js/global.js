@@ -39285,6 +39285,48 @@ Object.defineProperty(exports, "__esModule", {
 
 var _utilsFactory = require('../factories/utils/utils.factory.js');
 
+// TODO Use Audio Web API like this:
+/*
+const composePromise = (...fns) => args => fns.reduceRight((composed, f) => {
+  return Promise.resolve(composed).then(f);
+}, args);
+
+const context = new AudioContext;
+const source = context.createBufferSource();
+const getBuffer = data => data.arrayBuffer();
+const getAudioData = context => data => context.decodeAudioData(data)
+const digestBuffer = source => buffer => {
+  source.buffer = buffer;
+  return source;
+}
+
+const connectBuffer = destination => source => {
+  source.connect(destination);
+  return source;
+}
+
+const start = (time = 0) => source => {
+  source.start(time)
+  return source
+};
+
+const process = composePromise(
+  start(0),
+  connectBuffer(context.destination),
+  digestBuffer(source),
+  getAudioData(context),
+  getBuffer
+);
+
+const getUrl = url => () => fetch(url)
+  .then(process)
+  .catch(e => console.log(e));
+
+const load = getUrl("http://jplayer.org/audio/mp3/RioMez-01-Sleep_together.mp3");
+
+load();
+*/
+
 function Player() {
   if (!(this instanceof Player)) return new Player();
 
@@ -39293,11 +39335,23 @@ function Player() {
   return this;
 }
 
-Player.prototype.initialize = function (container) {
-  this.element = document.createElement('audio');
-  this.container = document.querySelector(container);
+Player.prototype.buildElement = function () {
+  var element = document.createElement('audio');
+  return element;
+};
 
-  this.container.appendChild(this.element);
+Player.prototype.getContainer = function (container) {
+  return document.querySelector(container);
+};
+
+Player.prototype.appendElementToContainer = function (container, element) {
+  container.appendChild(element);
+  return container;
+};
+
+Player.prototype.initialize = function (container) {
+  this.element = this.buildElement();
+  this.container = this.appendElementToContainer(this.getContainer(container), this.element);
 
   this._sourceElement = this.container.innerHTML;
   this.container.innerHTML = null;
@@ -39308,6 +39362,7 @@ Player.prototype.initialize = function (container) {
 
 Player.prototype.destroy = function () {
   this.container.innerHTML = null;
+  this.element = null;
 
   return this;
 };
@@ -39906,6 +39961,22 @@ var StationsService = function () {
       name: 'Space Station Soma',
       url: 'https://somafm.com/spacestation.pls',
       coverImage: 'https://somafm.com/img3/spacestation-400.jpg'
+    }, {
+      name: 'Secret Agent',
+      url: 'https://somafm.com/secretagent.pls',
+      coverImage: 'https://somafm.com/img3/secretagent-400.jpg'
+    }, {
+      name: 'Folk Forward',
+      url: 'https://somafm.com/folkfwd.pls',
+      coverImage: 'https://somafm.com/img3/folkfwd-400.jpg'
+    }, {
+      name: 'Left Coast 70s',
+      url: 'https://somafm.com/seventies320.pls',
+      coverImage: 'https://somafm.com/img/seventies400.jpg'
+    }, {
+      name: 'Illinois Street Lounge',
+      url: 'https://somafm.com/illstreet.pls',
+      coverImage: 'https://somafm.com/img3/illstreet-400.jpg'
     }];
   }
 

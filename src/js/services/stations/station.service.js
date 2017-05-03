@@ -17,6 +17,26 @@ export default class StationsService {
             name: 'Space Station Soma',
             url: 'https://somafm.com/spacestation.pls',
             coverImage: 'https://somafm.com/img3/spacestation-400.jpg'
+        },
+        {
+          name: 'Secret Agent',
+          url: 'https://somafm.com/secretagent.pls',
+          coverImage: 'https://somafm.com/img3/secretagent-400.jpg'
+        },
+        {
+          name: 'Folk Forward',
+          url: 'https://somafm.com/folkfwd.pls',
+          coverImage: 'https://somafm.com/img3/folkfwd-400.jpg'
+        },
+        {
+          name: 'Left Coast 70s',
+          url: 'https://somafm.com/seventies320.pls',
+          coverImage: 'https://somafm.com/img/seventies400.jpg'
+        },
+        {
+          name: 'Illinois Street Lounge',
+          url: 'https://somafm.com/illstreet.pls',
+          coverImage: 'https://somafm.com/img3/illstreet-400.jpg'
         }];
     }
 

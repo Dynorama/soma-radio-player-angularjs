@@ -6,6 +6,7 @@ Last Updated: 2010-09-17
 Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
+@import url("https://fonts.googleapis.com/css?family=Muli");
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -2486,6 +2487,7 @@ html, body {
   height: 100%; }
 
 body {
+  font-family: 'Muli', sans-serif;
   display: flex;
   align-items: center;
   flex-direction: row;
